@@ -10,6 +10,7 @@ const path = require("path");
 app.set("view engine", "ejs");
 
 app.get("/", async (request, response) => {
+  await Todo.addtodos({title:"Buy Milk",dueDate:2022-11-10})
   const allTodos = await Todo.getTodos();
   if (request.accepts("html")) {
     response.render('index', {
